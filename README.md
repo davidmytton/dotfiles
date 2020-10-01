@@ -4,11 +4,17 @@ My dotfiles for Manjaro Linux. Based on [this Reddit thread](https://www.reddit.
 
 ## Setup
 
-1. Install required packages below.
+1. Install packages below.
 2. Clone this repo.
 3. Run `./install` to set up symlinks using [dotbot](https://github.com/anishathalye/dotbot).
 
-## Required packages
+## Minimum required packages
+
+1. `sudo pacman -S zsh vim inetutils termite pacman-contrib`
+2. `chsh -s $(which zsh)` then logout/login.
+3. Install [ohmyzsh](https://ohmyz.sh/#install).
+
+## Packages
 
 * WM: [swaywm](https://swaywm.org/) ([Package](https://aur.archlinux.org/packages/sway-git/))
     * Lock: [swaylock](https://github.com/swaywm/swaylock) ([Package](https://www.archlinux.org/packages/community/x86_64/swaylock/))
@@ -17,7 +23,6 @@ My dotfiles for Manjaro Linux. Based on [this Reddit thread](https://www.reddit.
 * Theme: [Arc](https://github.com/jnsh/arc-theme) ([Package](https://www.archlinux.org/packages/community/any/arc-gtk-theme/))
 * Shell: [Termite](https://github.com/thestinger/termite/) ([Package](https://www.archlinux.org/packages/community/x86_64/termite/))
     * zsh ([Package](https://www.archlinux.org/packages/extra/x86_64/zsh/))
-    * [ohmyzsh](https://ohmyz.sh/#install)
     * [Keychain](https://www.funtoo.org/Keychain) ([Package](https://www.archlinux.org/packages/extra/any/keychain/))
 * Launcher: [rofi](https://github.com/davatorium/rofi) ([Package](https://www.archlinux.org/packages/community/x86_64/rofi/)) & wofi ([AUR](https://www.archlinux.org/packages/community/x86_64/wofi/))
 * Notifications: [mako](https://wayland.emersion.fr/mako/) ([Package](https://www.archlinux.org/packages/community/x86_64/mako/))
