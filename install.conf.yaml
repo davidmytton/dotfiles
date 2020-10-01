@@ -13,30 +13,38 @@
       create: true
       path: borgmatic.d/rsyncnet-onedrive-personal.yaml
     ~/.config/gtk-3.0:
+      if: '[ `hostname` != rpi4 ]'
       create: true
       path: gtk-3.0
     ~/.config/mako:
+      if: '[ `hostname` != rpi4 ]'
       create: true
       path: mako
     ~/.config/qt5ct:
+      if: '[ `hostname` != rpi4 ]'
       create: true
       path: qt5ct
     ~/.config/rofi:
+      if: '[ `hostname` != rpi4 ]'
       create: true
       path: rofi
     ~/.config/sway:
+      if: '[ `hostname` != rpi4 ]'
       create: true
       path: sway
     ~/.config/swaylock:
+      if: '[ `hostname` != rpi4 ]'
       create: true
       path: swaylock
     ~/.config/termite:
       create: true
       path: termite
     ~/.config/waybar:
+      if: '[ `hostname` != rpi4 ]'
       create: true
       path: waybar
     ~/.config/wofi:
+      if: '[ `hostname` != rpi4 ]'
       create: true
       path: wofi
 
