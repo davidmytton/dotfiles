@@ -8,7 +8,7 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
 
-    ~/.config/borgmatic.d/:
+    ~/.config/borgmatic.d:
       if: '[ `hostname` = rpi4 ]'
       create: true
       path: borgmatic.d
