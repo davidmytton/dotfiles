@@ -10,7 +10,7 @@ My dotfiles for Manjaro Linux. Based on [this Reddit thread](https://www.reddit.
 
 ## Minimum required packages
 
-1. `sudo pacman -S zsh vim inetutils termite pacman-contrib`
+1. `sudo pacman -S zsh git vim inetutils termite pacman-contrib`
 2. `chsh -s $(which zsh)` then logout/login.
 3. Install [ohmyzsh](https://ohmyz.sh/#install).
 
@@ -46,14 +46,14 @@ Environment="BORG_PASSPHRASE=HERE"
 2. `systemctl daemon-reload`
 3. `systemctl start borgmatic.timer`
 
-## `.git/config`
+## .git/config
 
 ```
 [filter "remove-healthchecks-url"]
     clean = "sed -e 's/^    healthchecks:.*/#    healthchecks: TODO/'"
 
 [submodule "dotbot"]
-	url = git@github.com:anishathalye/dotbot.git
-	active = true
+    url = git@github.com:anishathalye/dotbot.git
+    active = true
 ```
 
