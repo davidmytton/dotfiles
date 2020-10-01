@@ -1,0 +1,56 @@
+# Where to look for files to backup, and where to store those backups.
+# See https://borgbackup.readthedocs.io/en/stable/quickstart.html and
+# https://borgbackup.readthedocs.io/en/stable/usage/create.html
+# for details.
+location:
+    # List of source directories to backup (required). Globs and
+    # tildes are expanded.
+    source_directories:
+        - /mnt/backup/onedrive-personal
+
+    # Paths to local or remote repositories (required). Tildes are
+    # expanded. Multiple repositories are backed up to in
+    # sequence. See ssh_command for SSH options like identity file
+    # or port.
+    repositories:
+      - 18314@ch-s011.rsync.net:onedrive-personal
+
+    # Alternate Borg remote executable. Defaults to "borg".
+    # Needed for rsync.net
+    remote_path: borg1
+
+    # Any paths matching these patterns are excluded from backups.
+    # Globs and tildes are expanded. See the output of "borg help
+    # patterns" for more details.
+    exclude_patterns:
+      - '*.pyc'
+      - '*.git/'
+      - '~/.*'
+      - '~/*/.cache'
+      - '~/*/.local'
+      - '~/*/.venv'
+      - '~/Downloads'
+      - '*Videos*'
+
+# Retention policy for how many backups to keep in each category. See
+# https://borgbackup.readthedocs.io/en/stable/usage/prune.html for
+# details. At least one of the "keep" options is required for pruning
+# to work. See borgmatic documentation if you'd like to skip pruning
+# entirely.
+retention:
+    # Keep all archives within this time interval.
+    keep_within: 3H
+
+    # Number of daily archives to keep.
+    keep_daily: 7
+
+    # Number of weekly archives to keep.
+    keep_weekly: 4
+
+    # Number of monthly archives to keep.
+    keep_monthly: 6
+
+hooks:
+    before_backup:
+        - rclone -v sync onedrive-personal:/ /mnt/backup/onedrive-personal > /dev/null || exit 75
+#healthchecks: TODO

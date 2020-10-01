@@ -1,0 +1,11 @@
+[Unit]
+Description=Run borgmatic backup
+
+[Timer]
+# Daily at 3am
+OnCalendar=*-*-* 03:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

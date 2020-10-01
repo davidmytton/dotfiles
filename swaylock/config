@@ -1,0 +1,5 @@
+#clock # Requires swaylock-effects
+daemonize
+color=000000
+image=~/Pictures/Wallpapers/Faroes 2018 - 2018-09-16_13-50-14.heic
+scaling=fill

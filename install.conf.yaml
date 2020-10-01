@@ -1,0 +1,54 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.vimrc: vimrc
+    ~/.zshrc: zshrc
+
+    ~/.config/borgmatic.d/rsyncnet-onedrive-personal.yaml:
+      if: '[ `hostname` = rpi4 ]'
+      create: true
+      path: borgmatic.d/rsyncnet-onedrive-personal.yaml
+    ~/.config/gtk-3.0:
+      create: true
+      path: gtk-3.0
+    ~/.config/mako:
+      create: true
+      path: mako
+    ~/.config/qt5ct:
+      create: true
+      path: qt5ct
+    ~/.config/rofi:
+      create: true
+      path: rofi
+    ~/.config/sway:
+      create: true
+      path: sway
+    ~/.config/swaylock:
+      create: true
+      path: swaylock
+    ~/.config/termite:
+      create: true
+      path: termite
+    ~/.config/waybar:
+      create: true
+      path: waybar
+    ~/.config/wofi:
+      create: true
+      path: wofi
+
+    ~/.ssh/authorized_keys:
+      if: '[ `hostname` = rpi4 ]'
+      create: true
+      path: ssh/authorized_keys
+
+    /etc/systemd/system/borgmatic.service:
+      if: '[ `hostname` = rpi4 ]'
+      path: borgmatic.d/borgmatic.service
+    /etc/systemd/system/borgmatic.timer:
+      if: '[ `hostname` = rpi4 ]'
+      path: borgmatic.d/borgmatic.timer
+
