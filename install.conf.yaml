@@ -8,10 +8,10 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
 
-    ~/.config/borgmatic.d/rsyncnet-onedrive-personal.yaml:
+    ~/.config/borgmatic.d/:
       if: '[ `hostname` = rpi4 ]'
       create: true
-      path: borgmatic.d/rsyncnet-onedrive-personal.yaml
+      path: borgmatic.d
     ~/.config/gtk-3.0:
       if: '[ `hostname` != rpi4 ]'
       create: true
