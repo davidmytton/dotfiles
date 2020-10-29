@@ -2,7 +2,11 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/david/.oh-my-zsh"
+if [[ `uname` == "Darwin" ]]; then
+    export ZSH="/Users/david/.oh-my-zsh"
+else
+    export ZSH="/home/david/.oh-my-zsh"
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -99,11 +103,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias bq="ssh -t 18314@ch-s011.rsync.net quota"
 alias bqd="ssh -t 18314@ch-s011.rsync.net du -Ahd1"
+alias vim="nvim"
 
 # Set up keychain for SSH key
-eval $(keychain --eval --quiet id_rsa) 
+#eval $(keychain --eval --quiet id_rsa)
 
 # Prepend hostname to prompt
 # From https://github.com/ohmyzsh/ohmyzsh/issues/5686#issuecomment-298226435
 PROMPT="%{$fg[white]%}%n@%{$fg[green]%}%m%{$reset_color%} ${PROMPT}"
-
