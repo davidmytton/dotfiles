@@ -1,6 +1,6 @@
 # Dotfiles
 
-My dotfiles for Manjaro Linux. Based on [this Reddit thread](https://www.reddit.com/r/unixporn/comments/ivcxcw/sway_plateau/) and forked from [the associated GitHub repo](https://github.com/snakedye/sway_config).
+My dotfiles for Manjaro Linux (and zshrc/vimrc for macOS). Based on [this Reddit thread](https://www.reddit.com/r/unixporn/comments/ivcxcw/sway_plateau/) and forked from [the associated GitHub repo](https://github.com/snakedye/sway_config).
 
 ## Setup
 
@@ -10,9 +10,10 @@ My dotfiles for Manjaro Linux. Based on [this Reddit thread](https://www.reddit.
 
 ## Minimum required packages
 
-1. `sudo pacman -S zsh git vim inetutils termite pacman-contrib`
+1. `sudo pacman -S zsh git neovim inetutils termite pacman-contrib`
 2. `chsh -s $(which zsh)` then logout/login.
 3. Install [ohmyzsh](https://ohmyz.sh/#install).
+4. [Set up nvim init](https://neovim.io/doc/user/nvim.html#nvim-from-vim)
 
 ## Packages
 
@@ -28,6 +29,7 @@ My dotfiles for Manjaro Linux. Based on [this Reddit thread](https://www.reddit.
 * Notifications: [mako](https://wayland.emersion.fr/mako/) ([Package](https://www.archlinux.org/packages/community/x86_64/mako/))
 * Cloud sync: [rclone](https://rclone.org) ([Package](https://www.archlinux.org/packages/community/x86_64/rclone/))
     * [Configure rclone](https://rclone.org/onedrive/) (local config due to credentials being in file).
+* Notes: [nb](https://xwmx.github.io/nb/) ([Package](https://aur.archlinux.org/packages/nb))
 
 ## Backups:
 
@@ -38,7 +40,7 @@ Run on `rpi4` using the following packages:
 
 After dotbot installs the configs for systemd:
 
-1. `systemctl edit borgmatic.service` and set 
+1. `systemctl edit borgmatic.service` and set
 ```
 [Service]
 Environment="BORG_PASSPHRASE=HERE"
@@ -56,4 +58,3 @@ Environment="BORG_PASSPHRASE=HERE"
     url = git@github.com:anishathalye/dotbot.git
     active = true
 ```
-
