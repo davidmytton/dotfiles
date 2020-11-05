@@ -42,6 +42,19 @@ and [npm](https://github.com/igorshubovych/markdownlint-cli).
   * Screenshot Window Sizer
   * User Themes
   * Workspace Indicator
+    * Edited `/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js`
+    to set it to left position.
+
+```
+function enable() {
+    _indicator = new WorkspaceIndicator();
+
+    let pos = Main.sessionMode.panel.left.indexOf('appMenu');
+    if ('apps-menu' in Main.panel.statusArea)
+        pos++;
+    Main.panel.addToStatusArea('workspace-indicator', _indicator, pos, 'left');
+}
+```
 
 ## Packages - swaywm
 
