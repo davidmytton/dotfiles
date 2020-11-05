@@ -200,13 +200,16 @@ let g:ale_lint_delay = 1000
 let g:ale_sign_error = '✗\ '
 let g:ale_sign_warning = '⚠\ '
 
+let g:ale_linters = {
+\   'python': ['flake8'],
+\   'markdown': ['markdownlint'],
+\}
+
 " fixer configurations
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['autopep8'],
 \}
 
 " vimlatex config
 let g:tex_flavor = 'latex'
 let g:vimtex_compiler_method = "tectonic"
-
