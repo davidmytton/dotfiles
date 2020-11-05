@@ -213,3 +213,11 @@ let g:ale_fixers = {
 " vimlatex config
 let g:tex_flavor = 'latex'
 let g:vimtex_compiler_method = "tectonic"
+
+let g:vimtex_compiler_tectonic = {
+\ 'build_dir' : 'build',
+\ 'options' : [
+\   '--keep-logs',
+\   '--synctex'
+\ ],
+\}
