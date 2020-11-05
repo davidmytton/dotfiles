@@ -16,6 +16,13 @@ My dotfiles for Manjaro Linux (and zshrc/vimrc for macOS). Based on [this Reddit
 4. [Set up nvim init](https://neovim.io/doc/user/nvim.html#nvim-from-vim)
 5. `mkdir ~/.themes/` then clone [Nordic](https://github.com/EliverLara/Nordic).
 
+## Ale linters
+
+Ale is installed to vim with `:PlugInstall`. It uses several linters that need installing:
+
+* markdownlint - [AUR](https://aur.archlinux.org/packages/nodejs-markdownlint-cli/) and [npm](https://github.com/igorshubovych/markdownlint-cli).
+* flake8 (Python) - AUR and pypi.
+
 ## Packages - GNOME
 
 * Theme: [Nordic](https://github.com/EliverLara/Nordic) 
