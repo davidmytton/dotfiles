@@ -23,6 +23,7 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'lepture/vim-jinja'
 Plug 'pangloss/vim-javascript'
 Plug 'dense-analysis/ale'
+Plug 'lervag/vimtex'
 call plug#end()
 
 filetype plugin indent on
@@ -204,3 +205,8 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['autopep8'],
 \}
+
+" vimlatex config
+let g:tex_flavor = 'latex'
+let g:vimtex_compiler_method = "tectonic"
+
