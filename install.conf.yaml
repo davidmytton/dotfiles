@@ -39,6 +39,10 @@
       if: '[ `hostname` != rpi4 ]'
       create: true
       path: wofi
+    ~/.config/onedrive/config:
+      if: '[ `hostname` != rpi4 ]'
+      create: true
+      path: onedrive/config
 
     ~/.ssh/authorized_keys:
       if: '[ `hostname` = rpi4 ]'

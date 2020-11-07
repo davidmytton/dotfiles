@@ -1,0 +1,2 @@
+skip_dotfiles = "true"
+monitor_interval = "3600"
