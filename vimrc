@@ -203,7 +203,8 @@ let g:ale_lint_delay = 1000
 
 let g:ale_linters = {
 \   'python': ['flake8'],
-\   'markdown': ['markdownlint'],
+\   'tex': ['vale'],
+\   'markdown': ['markdownlint', 'vale'],
 \}
 
 " fixer configurations
