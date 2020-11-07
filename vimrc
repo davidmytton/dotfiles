@@ -58,6 +58,7 @@ set softtabstop=4
 set colorcolumn=80
 set expandtab
 set viminfo='25,\"50,n~/.viminfo
+set tw=79
 
 " word movement
 imap <S-Left> <Esc>bi
