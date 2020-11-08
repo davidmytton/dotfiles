@@ -27,6 +27,9 @@ several linters that need installing:
 * markdownlint - [AUR](https://aur.archlinux.org/packages/nodejs-markdownlint-cli/)
 and [npm](https://github.com/igorshubovych/markdownlint-cli).
 * flake8 (Python) - AUR and pypi.
+* [vale](https://docs.errata.ai/vale/about/) (Markdown and tex) - with
+  [Microsoft](https://github.com/errata-ai/Microsoft) and [proselint](https://github.com/errata-ai/proselint)
+  styles installed.
 
 ## Packages - GNOME
 
