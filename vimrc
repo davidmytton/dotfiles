@@ -220,6 +220,7 @@ let g:vimtex_compiler_tectonic = {
 \ 'build_dir' : 'build',
 \ 'options' : [
 \   '--keep-logs',
+\   '--keep-intermediates',
 \   '--synctex'
 \ ],
 \}
