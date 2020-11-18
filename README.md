@@ -37,6 +37,8 @@ linters that need installing:
   [Microsoft](https://github.com/errata-ai/Microsoft) and
   [proselint](https://github.com/errata-ai/proselint) styles installed.
 
+For Emoji, set up the [ibus typing booster](https://mike-fabian.github.ioc/documentation.html#adding-gnome).
+
 ## Packages - GNOME
 
 * Theme: [Nordic](https://github.com/EliverLara/Nordic)
