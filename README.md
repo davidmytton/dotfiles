@@ -41,23 +41,17 @@ For Emoji, set up the [ibus typing booster](https://mike-fabian.github.ioc/docum
 
 ## Packages - GNOME
 
-* Theme: [Nordic](https://github.com/EliverLara/Nordic)
-* Shell: [Termite](https://github.com/thestinger/termite/)
-  ([Package](https://www.archlinux.org/packages/community/x86_64/termite/))
-  * zsh ([Package](https://www.archlinux.org/packages/extra/x86_64/zsh/))
-  * [Keychain](https://www.funtoo.org/Keychain)
-    ([Package](https://www.archlinux.org/packages/extra/any/keychain/))
-* Extensions
-  * Dash to dock
-  * OpenWeather
-  * Pamac Updates Indicator
-  * Pop Shell
-  * Screenshot Window Sizer
-  * User Themes
-  * Workspace Indicator
-    * Edited
-      `/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js`
-      to set it to left position.
+Extensions:
+
+* Dash to dock
+* OpenWeather
+* Pamac Updates Indicator
+* Pop Shell
+* Screenshot Window Sizer
+* User Themes
+* Workspace Indicator
+  * Edited     `/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js`
+    to set it to left position.
 
 ```
 function enable() {
