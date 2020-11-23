@@ -12,7 +12,7 @@ fi
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="ys"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -107,7 +107,3 @@ alias vim="nvim"
 
 # Set up keychain for SSH key
 #eval $(keychain --eval --quiet id_rsa)
-
-# Prepend hostname to prompt
-# From https://github.com/ohmyzsh/ohmyzsh/issues/5686#issuecomment-298226435
-PROMPT="%{$fg[white]%}%n@%{$fg[green]%}%m%{$reset_color%} ${PROMPT}"
