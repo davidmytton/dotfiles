@@ -37,17 +37,26 @@ linters that need installing:
   [Microsoft](https://github.com/errata-ai/Microsoft) and
   [proselint](https://github.com/errata-ai/proselint) styles installed.
 
-For Emoji, set up the [ibus typing booster](https://mike-fabian.github.ioc/documentation.html#adding-gnome).
+Autocomplete ([deoplete](https://github.com/Shougo/deoplete.nvim),
+[deoplete-jedi](https://github.com/deoplete-plugins/deoplete-jedi),
+[jedi-vim](https://github.com/davidhalter/jedi-vim)) require [python-pynvim
+package](https://www.archlinux.org/packages/community/any/python-pynvim/),
+[python-jedi](https://www.archlinux.org/packages/community/any/python-jedi/)
+and
+[python-msgpack](https://www.archlinux.org/packages/community/x86_64/python-msgpack/).
 
 ## Packages - GNOME
 
 Extensions:
 
-* Dash to dock
+* Clipboard indicator
+* Dash to panel
+* Emoji selector
 * OpenWeather
 * Pamac Updates Indicator
 * Pop Shell
 * Screenshot Window Sizer
+* Unite
 * User Themes
 * Workspace Indicator
   * Edited     `/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js`

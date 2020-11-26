@@ -24,6 +24,16 @@ Plug 'lepture/vim-jinja'
 Plug 'pangloss/vim-javascript'
 Plug 'dense-analysis/ale'
 Plug 'lervag/vimtex'
+Plug 'davidhalter/jedi-vim'
+Plug 'deoplete-plugins/deoplete-jedi'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 call plug#end()
 
 filetype plugin indent on
@@ -224,3 +234,9 @@ let g:vimtex_compiler_tectonic = {
 \   '--synctex'
 \ ],
 \}
+
+" Disable Jedi because it is called through deoplete
+let g:jedi#completions_enabled = 0
+let g:deoplete#enable_at_startup = 1
+" Don't show the extra docstring stuff
+autocmd FileType python setlocal completeopt-=preview
