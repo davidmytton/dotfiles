@@ -9,6 +9,10 @@
     ~/.zshrc: zshrc
     ~/.vale.ini: vale/vale.ini
 
+    ~/.config/alacritty:
+      if: '[ `hostname` != rpi4 ]'
+      create: true
+      path: alacritty
     ~/.config/borgmatic.d:
       if: '[ `hostname` = rpi4 ]'
       create: true
