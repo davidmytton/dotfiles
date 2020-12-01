@@ -62,9 +62,9 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " sane editing
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set colorcolumn=80
 set expandtab
 set viminfo='25,\"50,n~/.viminfo
