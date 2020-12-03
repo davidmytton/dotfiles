@@ -62,13 +62,15 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " sane editing
+set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set colorcolumn=80
-set expandtab
 set viminfo='25,\"50,n~/.viminfo
 set tw=79
+set autoindent
+set smartindent
 
 " word movement
 imap <S-Left> <Esc>bi
