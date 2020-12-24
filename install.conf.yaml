@@ -17,6 +17,10 @@
       if: '[ `hostname` = rpi4 ]'
       create: true
       path: borgmatic.d
+    ~/.config/gtk-3.0:
+      if: '[ `hostname` != rpi4 ]'
+      create: true
+      path: gtk-3.0
     ~/.config/mako:
       if: '[ `hostname` != rpi4 ]'
       create: true
