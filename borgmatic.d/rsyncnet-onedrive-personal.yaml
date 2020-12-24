@@ -53,4 +53,6 @@ retention:
 hooks:
     before_backup:
         - rclone -v sync onedrive-personal:/ /mnt/backup/onedrive-personal > /dev/null || exit 75
-#healthchecks: TODO
+        - rclone -P sync googlephotos:album /mnt/backup/onedrive-personal/Pictures/LD > /dev/null || exit 75
+        - rclone -P sync /mnt/backup/onedrive-personal/Pictures/LD onedrive-personal:/Pictures/LD > /dev/null || exit 75
+#    healthchecks: TODO
