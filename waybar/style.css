@@ -9,6 +9,7 @@
    font-size: 13px;
    /* font-family: Ubuntu ,Arial, Helvetica, sans-serif; */
     font-weight: 500;
+    font-family: monospace;
 }
 
 window#waybar {
@@ -234,7 +235,7 @@ window#waybar.hidden {
 /* WIDGETS */
 
 #custom-name {
-  font-family: Ubuntu;
+  /*font-family: Ubuntu;*/
   font-size: 13px;
     font-weight: normal;
     background-color: transparent;
@@ -282,7 +283,7 @@ window#waybar.hidden {
 #network {
     background-color: transparent;
 	padding: 0px 8px 0px 8px;
-	/* margin: 0; */	
+	/* margin: 0; */
 	border-bottom: 3px solid #d08770;
 }
 
@@ -296,7 +297,7 @@ window#waybar.hidden {
 	padding: 0px 10px 0px 10px;
 	/* margin: 0; */
     margin: 0 4 0 4;
-	border-bottom: 3px solid #D3B67D;	
+	border-bottom: 3px solid #D3B67D;
 	/* border-radius: 5 0 0 5; */
 }
 
@@ -316,7 +317,7 @@ window#waybar.hidden {
     background-color: #66cc99;
 	padding: 0px 8px 0px 8px;
 	/* margin: 0; */
-	
+
 }
 
 #custom-media.custom-spotify {
@@ -327,7 +328,7 @@ window#waybar.hidden {
 #custom-media.custom-vlc {
     background-color: #ffa000;
 	padding: 0px 8px 0px 8px;
-	border-radius: 5px;    
+	border-radius: 5px;
 }
 
 
@@ -335,7 +336,7 @@ window#waybar.hidden {
     background-color: transparent;
 	/* margin: 0; */
 	border-bottom: 3px solid #b48ead;
-	
+
 }
 
 #temperature.critical {
@@ -432,4 +433,3 @@ label:focus {
 #mpd.paused {
     background-color: #51a37a;
 }
-

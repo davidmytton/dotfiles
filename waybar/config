@@ -1,6 +1,6 @@
 {
     // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)		
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
     // "height": 38, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
     "margin": 0,
@@ -19,9 +19,6 @@
             "2": [],
             "3": []
          },
-         "format-icons": {
-            "1": "1: Notes"
-         }
      },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -40,8 +37,8 @@
     "mpd": {
         "format": "♪ {}",
         //"max-length": 15,
-        "interval": 10, 
-        "exec": "mpc current", 
+        "interval": 10,
+        "exec": "mpc current",
         "exec-if": "pgrep mpd",
         "on-click": "mpc toggle",
         "on-click-right": "sonata"
@@ -76,11 +73,12 @@
     },
     "clock": {
         "timezone": "Europe/London",
-        "format": "{:%a %d %b %H:%M}",
-	"tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>",
+        "format": "{:%a %d %b %H:%M:%S}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>",
+        "interval": 1
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "🤖 {usage}%",
         "tooltip": false
     },
     "memory": {
@@ -92,22 +90,19 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "🔋 {capacity}% {icon}",
         "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-plugged": "🔌 {capacity}%",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        "interface": "wlan0", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-wifi": "wifi: {essid} ({signalStrength}%)",
+        "format-ethernet": "eth: {ipaddr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click-middle": "exec termite -e nmtui"
+        "on-click-middle": "exec alacritty -e nmtui"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -115,8 +110,8 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source": "{volume}% 🎙️",
+        "format-source-muted": "🔇",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -124,7 +119,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["🔈", "🔉", "🔊"]
         },
         "on-click": "pavucontrol"
     },
@@ -134,7 +129,7 @@
     	"max-length": 10
     },
     "custom/pacman": {
-        "format": "{}  ",
+        "format": "🌲 {}",
         "interval": 3600,                     // every hour
         "exec": "checkupdates | wc -l",       // # of updates
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
