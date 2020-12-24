@@ -133,6 +133,7 @@
         "exec": "checkupdates | wc -l",       // # of updates
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
         "signal": 8,
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "exec alacritty --hold -e yay"
     }
 }
