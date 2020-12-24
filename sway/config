@@ -16,6 +16,7 @@ for_window [title="Authorization is required"] floating enable
 for_window [title="Copying"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [app_id="dolphin"] opacity 0.97
+for_window [title="Signal"] floating enable
 
 exec_always ~/dotfiles/import-gsettings
 
