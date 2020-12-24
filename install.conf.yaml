@@ -58,11 +58,6 @@
         create: true
         path: ssh/authorized_keys
 
-    /etc/bluetooth/main.conf:
-        if: '[ `hostname` != rpi4 ]'
-        path: bluetooth.conf
-        force: true
-
     /etc/systemd/system/borgmatic.service:
         if: '[ `hostname` = rpi4 ]'
         path: borgmatic.d/borgmatic.service
