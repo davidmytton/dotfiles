@@ -10,62 +10,62 @@
     ~/.vale.ini: vale/vale.ini
 
     ~/.config/alacritty:
-      if: '[ `hostname` != rpi4 ]'
-      create: true
-      path: alacritty
+        if: '[ `hostname` != rpi4 ]'
+        create: true
+        path: alacritty
     ~/.config/borgmatic.d:
-      if: '[ `hostname` = rpi4 ]'
-      create: true
-      path: borgmatic.d
+        if: '[ `hostname` = rpi4 ]'
+        create: true
+        path: borgmatic.d
     ~/.config/gtk-3.0:
-      if: '[ `hostname` != rpi4 ]'
-      create: true
-      path: gtk-3.0
+        if: '[ `hostname` != rpi4 ]'
+        create: true
+        path: gtk-3.0
     ~/.config/mako:
-      if: '[ `hostname` != rpi4 ]'
-      create: true
-      path: mako
+        if: '[ `hostname` != rpi4 ]'
+        create: true
+        path: mako
     ~/.config/rofi:
-      if: '[ `hostname` != rpi4 ]'
-      create: true
-      path: rofi
+        if: '[ `hostname` != rpi4 ]'
+        create: true
+        path: rofi
     ~/.config/sway:
-      if: '[ `hostname` != rpi4 ]'
-      create: true
-      path: sway
+        if: '[ `hostname` != rpi4 ]'
+        create: true
+        path: sway
     ~/.config/swaylock:
-      if: '[ `hostname` != rpi4 ]'
-      create: true
-      path: swaylock
+        if: '[ `hostname` != rpi4 ]'
+        create: true
+        path: swaylock
     ~/.config/waybar:
-      if: '[ `hostname` != rpi4 ]'
-      create: true
-      path: waybar
+        if: '[ `hostname` != rpi4 ]'
+        create: true
+        path: waybar
     ~/.config/wofi:
-      if: '[ `hostname` != rpi4 ]'
-      create: true
-      path: wofi
+        if: '[ `hostname` != rpi4 ]'
+        create: true
+        path: wofi
     ~/.config/onedrive/config:
-      if: '[ `hostname` != rpi4 ]'
-      create: true
-      path: onedrive/config
+        if: '[ `hostname` != rpi4 ]'
+        create: true
+        path: onedrive/config
     ~/.config/vale:
-      if: '[ `hostname` != rpi4 ]'
-      create: true
-      path: vale
+        if: '[ `hostname` != rpi4 ]'
+        create: true
+        path: vale
     ~/.ssh/authorized_keys:
-      if: '[ `hostname` = rpi4 ]'
-      create: true
-      path: ssh/authorized_keys
+        if: '[ `hostname` = rpi4 ]'
+        create: true
+        path: ssh/authorized_keys
 
     /etc/bluetooth/main.conf:
-      if: '[ `hostname` != rpi4 ]'
-      path: bluetooth.conf
-      force: true
+        if: '[ `hostname` != rpi4 ]'
+        path: bluetooth.conf
+        force: true
 
     /etc/systemd/system/borgmatic.service:
-      if: '[ `hostname` = rpi4 ]'
-      path: borgmatic.d/borgmatic.service
+        if: '[ `hostname` = rpi4 ]'
+        path: borgmatic.d/borgmatic.service
     /etc/systemd/system/borgmatic.timer:
-      if: '[ `hostname` = rpi4 ]'
-      path: borgmatic.d/borgmatic.timer
+        if: '[ `hostname` = rpi4 ]'
+        path: borgmatic.d/borgmatic.timer
