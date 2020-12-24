@@ -124,9 +124,8 @@
         "on-click": "pavucontrol"
     },
     "custom/weather": {
-        "exec": "curl 'https://wttr.in/?format=1'",
+        "exec": "curl 'https://wttr.in/?format=%C+%f+%p'",
         "interval": 300,
-    	"max-length": 10
     },
     "custom/pacman": {
         "format": "🌲 {}",
