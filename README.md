@@ -1,8 +1,8 @@
 # Dotfiles
 
-My dotfiles for Manjaro Linux (and zshrc/vimrc for macOS). Based on [this
-Reddit thread](https://www.reddit.com/r/unixporn/comments/ivcxcw/sway_plateau/)
-and forked from [the associated GitHub
+Based on [this Reddit
+thread](https://www.reddit.com/r/unixporn/comments/ivcxcw/sway_plateau/) and
+forked from [the associated GitHub
 repo](https://github.com/snakedye/sway_config).
 
 ## Setup
@@ -14,14 +14,13 @@ repo](https://github.com/snakedye/sway_config).
 
 ## Minimum required packages
 
-1. `sudo pacman -S zsh git neovim inetutils termite pacman-contrib`
+1. `sudo pacman -S zsh git firefox neovim inetutils alacritty pacman-contrib
+   tex-gyre-fonts`
 2. `chsh -s $(which zsh)` then logout/login.
 3. Install [ohmyzsh](https://ohmyz.sh/#install).
 4. [Set up nvim init](https://neovim.io/doc/user/nvim.html#nvim-from-vim)
 5. `mkdir ~/.themes/` then clone
    [Nordic](https://github.com/EliverLara/Nordic).
-6. Set up [Nord theme for
-   gnome-terminal](https://github.com/arcticicestudio/nord-gnome-terminal).
 
 ## Text
 
@@ -83,20 +82,8 @@ function enable() {
     ([Package](https://www.archlinux.org/packages/community/x86_64/grim/))
 * Status bar: [waybar](https://github.com/Alexays/Waybar/)
   ([Package](https://aur.archlinux.org/packages/waybar-git/))
-* Theme: [Nordic](https://github.com/EliverLara/Nordic)
-* Shell: [Termite](https://github.com/thestinger/termite/)
-  ([Package](https://www.archlinux.org/packages/community/x86_64/termite/))
-  * zsh ([Package](https://www.archlinux.org/packages/extra/x86_64/zsh/))
-  * [Keychain](https://www.funtoo.org/Keychain)
-    ([Package](https://www.archlinux.org/packages/extra/any/keychain/))
 * Notifications: [mako](https://wayland.emersion.fr/mako/)
   ([Package](https://www.archlinux.org/packages/community/x86_64/mako/))
-* Cloud sync: [rclone](https://rclone.org)
-  ([Package](https://www.archlinux.org/packages/community/x86_64/rclone/))
-  * [Configure rclone](https://rclone.org/onedrive/) (local config due to
-    credentials being in file).
-* Notes: [nb](https://xwmx.github.io/nb/)
-  ([Package](https://aur.archlinux.org/packages/nb))
 
 ## Backups
 
