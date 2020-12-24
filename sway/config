@@ -6,11 +6,8 @@
 
 # Autostart
 
-exec /usr/lib/kdeconnectd
-exec kdeconnect-indicator
 exec autotiling
 exec mako
-exec /usr/lib/polkit-kde-authentication-agent-1
 
 # Windows Rules
 
@@ -20,15 +17,7 @@ for_window [title="Copying"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [app_id="dolphin"] opacity 0.97
 
-# GTK settings
-set $gnome-schema org.gnome.desktop.interface
-
-exec_always {
-    gsettings set $gnome-schema gtk-theme 'Nordic'
-    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-    gsettings set $gnome-schema cursor-theme 'Adwaita'
-    gsettings set $gnome-schema font-name 'TeX Gyre Heros Regular'
-}
+exec_always ~/dotfiles/import-gsettings
 
 # Startup
 workspace 1
@@ -60,7 +49,6 @@ default_border pixel 3
 
 # Font
 #font pango:ProductSansMedium 13px
-font pango:SanFranciscoText 13px
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
