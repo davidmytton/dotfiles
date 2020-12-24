@@ -21,10 +21,6 @@
       if: '[ `hostname` != rpi4 ]'
       create: true
       path: mako
-    ~/.config/neomutt:
-      if: '[ `hostname` != rpi4 ]'
-      create: true
-      path: neomutt
     ~/.config/rofi:
       if: '[ `hostname` != rpi4 ]'
       create: true
@@ -37,9 +33,6 @@
       if: '[ `hostname` != rpi4 ]'
       create: true
       path: swaylock
-    ~/.config/termite:
-      create: true
-      path: termite
     ~/.config/waybar:
       if: '[ `hostname` != rpi4 ]'
       create: true
