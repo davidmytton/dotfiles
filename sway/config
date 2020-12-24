@@ -19,7 +19,7 @@ for_window [app_id="dolphin"] opacity 0.97
 for_window [title="Signal"] floating enable
 
 exec_always ~/dotfiles/import-gsettings
-seat seat0 xcursor_theme Adwaita 
+seat seat0 xcursor_theme Adwaita
 
 # Startup
 workspace 1
@@ -84,7 +84,7 @@ exec swayidle -w\
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'exec swaylock -f -C ~/.config/swaylock/config'
 
-bindsym $mod+f1 exec ~/.config/sway/lock.sh
+bindsym $mod+Escape exec ~/.config/sway/lock.sh
 
 # Screenshots - whole screen and selector
 bindsym Print exec grim $(xdg-user-dir PICTURES)/$(date +'screenshot_%s.png')
@@ -259,7 +259,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 #
 # Screensharing
-# 
+#
 # Assuming xdg-desktop-portal and xdg-desktop-portal-wlr are installed, they
 # need to be launched with the correct XDG_CURRENT_DESKTOP env variable set.
 # This line does that. As per https://github.com/emersion/xdg-desktop-portal-wlr/wiki/systemd-user-services,-pam,-and-environment-variables
