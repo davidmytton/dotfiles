@@ -19,6 +19,7 @@ for_window [app_id="dolphin"] opacity 0.97
 for_window [title="Signal"] floating enable
 
 exec_always ~/dotfiles/import-gsettings
+seat seat0 xcursor_theme Adwaita 
 
 # Startup
 workspace 1
@@ -35,15 +36,7 @@ set $right l
 # Your preferred terminal emulator
 set $term alacritty
 # Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-# set $menu rofi -show drun -config ~/.config/rofi/sidetab.rasi -font 'ProductSans 10'
-set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/menu -I
-# set $menu nwgdmenu -o 0 -r 8
-# set $menu rofi -show drun -config ~/.config/rofi/rofi-spotlight/rofi.rasi
-# Window switcher
-bindsym $mod+d exec rofi -modi "Global Search":"~/.config/rofi/rofi-spotlight/rofi-spotlight.sh" -show "Global Search" \
--config ~/.config/rofi/rofi-spotlight/rofi.rasi
+set $menu wofi
 
 # Disable titlebar
 default_border pixel 3
@@ -255,13 +248,22 @@ bindsym Shift+print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'sc
     # down will grow the containers height
 # }
 
+#
+# Media keys
+#
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# bindsym $mod+r mode "resize"
+#
+# Screensharing
+# 
+# Assuming xdg-desktop-portal and xdg-desktop-portal-wlr are installed, they
+# need to be launched with the correct XDG_CURRENT_DESKTOP env variable set.
+# This line does that. As per https://github.com/emersion/xdg-desktop-portal-wlr/wiki/systemd-user-services,-pam,-and-environment-variables
+exec "systemctl --user import-environment"
 
 #
 # Status Bar:
