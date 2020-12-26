@@ -102,7 +102,7 @@
         "format-ethernet": "eth: {ipaddr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "on-click-middle": "exec alacritty -e nmtui"
+        "on-click-right": "exec alacritty -e nmtui"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

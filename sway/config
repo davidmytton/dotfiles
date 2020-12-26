@@ -17,6 +17,7 @@ for_window [title="Copying"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [app_id="dolphin"] opacity 0.97
 for_window [title="Signal"] floating enable
+for_window [class="vlc"] inhibit_idle fullscreen
 
 exec_always ~/dotfiles/import-gsettings
 seat seat0 xcursor_theme Adwaita
@@ -74,8 +75,8 @@ gaps outer 3
 # Example configuration:
 #
 
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
+# This will lock your screen after 600 seconds of inactivity, then turn off
+# your displays after another 30 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 exec swayidle -w\
