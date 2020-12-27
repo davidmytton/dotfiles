@@ -5,6 +5,7 @@
 - clean: ['~']
 
 - link:
+    ~/.pam_environment: pam_environment
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.vale.ini: vale/vale.ini
