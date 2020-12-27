@@ -17,6 +17,10 @@
         if: '[ `hostname` = rpi4 ]'
         create: true
         path: borgmatic.d
+    ~/.config/fontconfig:
+        if: '[ `hostname` != rpi4 ]'
+        create: true
+        path: fontconfig
     ~/.config/gtk-3.0:
         if: '[ `hostname` != rpi4 ]'
         create: true
