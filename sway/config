@@ -18,6 +18,8 @@ for_window [title="File Already Exist"] floating enable
 for_window [app_id="dolphin"] opacity 0.97
 for_window [title="Signal"] floating enable
 for_window [class="vlc"] inhibit_idle fullscreen
+for_window [title="Progress"] floating enable
+for_window [title="Quick Format Citation"] floating enable
 
 exec_always ~/dotfiles/import-gsettings
 seat seat0 xcursor_theme Adwaita
@@ -188,8 +190,8 @@ bindsym Shift+print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'sc
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    #bindsym $mod+b splith
-    #bindsym $mod+v splitv
+    bindsym $mod+c splith
+    bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
