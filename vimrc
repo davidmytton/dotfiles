@@ -14,6 +14,8 @@ Plug 'tpope/vim-sensible'
 Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ap/vim-buftabline'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/The-NERD-tree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -45,6 +47,9 @@ if need_to_install_plugins == 1
     echo "Done!"
     q
 endif
+
+" gfiles shortcut
+nnoremap <C-p> :GFiles<Cr>
 
 " always show the status bar
 set laststatus=2
