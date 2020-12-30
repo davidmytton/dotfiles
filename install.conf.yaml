@@ -15,7 +15,6 @@
         create: true
         path: alacritty
     ~/.config/borgmatic.d:
-        if: '[ `hostname` = rpi4 ]'
         create: true
         path: borgmatic.d
     ~/.config/fontconfig:
