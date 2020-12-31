@@ -48,7 +48,7 @@ retention:
     keep_weekly: 4
 
     # Number of monthly archives to keep.
-    keep_monthly: 6
+    keep_monthly: 18
 
 hooks:
     before_backup:
