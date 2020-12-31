@@ -90,8 +90,8 @@ exec swayidle -w\
 bindsym $mod+Escape exec ~/.config/sway/lock.sh
 
 # Screenshots - whole screen and selector
-bindsym Print exec grim $(xdg-user-dir PICTURES)/$(date +'screenshot_%s.png')
-bindsym Shift+print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'screenshot_%s.png')
+bindsym Shift+Alt+3 exec grim $(xdg-user-dir PICTURES)/$(date +'screenshot_%s.png')
+bindsym Shift+Alt+4 exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'screenshot_%s.png')
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
