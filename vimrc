@@ -49,7 +49,8 @@ if need_to_install_plugins == 1
 endif
 
 " gfiles shortcut
-nnoremap <C-p> :GFiles<Cr>
+nnoremap <C-f> :Files<Cr>
+nnoremap <C-g> :GFiles<Cr>
 
 " always show the status bar
 set laststatus=2
