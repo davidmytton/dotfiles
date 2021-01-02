@@ -91,7 +91,7 @@
             "critical": 15
         },
         "format": "🔋 {capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "⚡ {capacity}%",
         "format-plugged": "🔌 {capacity}%",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -123,9 +123,16 @@
         },
         "on-click": "pavucontrol"
     },
+    //"custom/weather": {
+    //    "exec": "curl 'https://wttr.in/?format=%C+%f'",
+    //    "interval": 300,
+    //},
     "custom/weather": {
-        "exec": "curl 'https://wttr.in/?format=%C+%f'",
-        "interval": 300,
+        "format": "{}",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "python ~/.config/waybar/waybar-wttr.py",
+        "return-type": "json"
     },
     "custom/khal": {
         "format": "{}",
