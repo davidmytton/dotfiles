@@ -83,6 +83,7 @@ window#waybar.hidden {
 #custom-power,
 #custom-exit,
 #custom-pacman,
+#custom-khal,
 #custom-name,
 #custom-github,
 #custom-reddit,
@@ -257,6 +258,13 @@ window#waybar.hidden {
 	padding: 0px 8px 0px 8px;
 /* 	margin: 0; */
 	border-bottom: 3px solid #5e81ac;
+}
+
+#custom-khal {
+	background-color: transparent;
+	padding: 0px 8px 0px 8px;
+/* 	margin: 0; */
+	border-bottom: 3px solid #81a1c1;
 }
 
 #cpu {

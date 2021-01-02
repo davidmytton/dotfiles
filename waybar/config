@@ -8,7 +8,7 @@
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window"],
     // "idle_inhibitor",
-    "modules-right": [ "pulseaudio", "cpu", "battery", "network", "custom/weather", "custom/pacman", "tray", "clock", "idle_inhibitor"],
+    "modules-right": [ "custom/khal", "pulseaudio", "cpu", "battery", "network", "custom/weather", "custom/pacman", "tray", "clock", "idle_inhibitor"],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -126,6 +126,13 @@
     "custom/weather": {
         "exec": "curl 'https://wttr.in/?format=%C+%f'",
         "interval": 300,
+    },
+    "custom/khal": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 300,
+        "exec": "python ~/.config/waybar/waybar-khal.py",
+        "return-type": "json",
     },
     "custom/pacman": {
         "format": "🌲 {}",

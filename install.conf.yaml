@@ -25,6 +25,10 @@
         if: '[ `hostname` != rpi4 ]'
         create: true
         path: gtk-3.0
+    ~/.config/khal/config:
+        if: '[ `hostname` != rpi4 ]'
+        create: true
+        path: khal/config
     ~/.config/mako:
         if: '[ `hostname` != rpi4 ]'
         create: true
