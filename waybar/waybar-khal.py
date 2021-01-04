@@ -35,7 +35,7 @@ output = "\n".join(new_lines).strip()
 if today in output:
     data['text'] = "📅 " + output.split('\n')[1]
 else:
-    data['text'] = "📅 No events today"
+    data['text'] = "📅 🍃"
 
 data['tooltip'] = output
 
