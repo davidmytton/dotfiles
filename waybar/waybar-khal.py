@@ -22,6 +22,10 @@ output = output.decode("utf-8")
 lines = output.split("\n")
 new_lines = []
 for line in lines:
+
+    if line.startswith('↦ '):
+        continue
+
     clean_line = escape(line).split(" ::")[0]
     if len(clean_line) and not clean_line[0] in ['0', '1', '2']:
         clean_line = "\n<b>"+clean_line+"</b>"
