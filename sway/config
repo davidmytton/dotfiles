@@ -77,13 +77,13 @@ gaps outer 3
 # Example configuration:
 #
 
-# This will lock your screen after 600 seconds of inactivity, then turn off
+# This will lock your screen after 1800 seconds of inactivity, then turn off
 # your displays after another 30 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 exec swayidle -w\
-    timeout 600 'swaylock -f -C ~/.config/swaylock/config'\
-    timeout 570 'swaymsg "output * dpms off"' \
+    timeout 1800 'swaylock -f -C ~/.config/swaylock/config'\
+    timeout 1830 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'exec swaylock -f -C ~/.config/swaylock/config'
 
