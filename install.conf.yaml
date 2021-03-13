@@ -8,6 +8,7 @@
     ~/.pam_environment: pam_environment
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
+    ~/.config/starship.toml: starship.toml
     ~/.vale.ini: vale/vale.ini
 
     ~/.config/alacritty:
