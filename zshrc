@@ -72,7 +72,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf zsh-autosuggestions)
+plugins=(git fzf zsh-autosuggestions nix-shell)
 
 source $ZSH/oh-my-zsh.sh
 

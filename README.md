@@ -26,6 +26,7 @@ repo](https://github.com/snakedye/sway_config).
 
 * [Starship](https://starship.rs/)
 * [zsh auto-suggestions](https://github.com/zsh-users/zsh-autosuggestions)
+* [zsh-nix-shell](https://github.com/chisui/zsh-nix-shell)
 
 ## Text
 
