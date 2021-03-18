@@ -10,6 +10,7 @@
     ~/.zshrc: zshrc
     ~/.config/starship.toml: starship.toml
     ~/.vale.ini: vale/vale.ini
+    ~/.tmux.conf: tmux.conf
 
     ~/.config/alacritty:
         if: '[ `hostname` != rpi4 ]'

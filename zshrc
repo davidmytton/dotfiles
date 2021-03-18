@@ -72,7 +72,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf zsh-autosuggestions nix-shell)
+plugins=(git fzf nix-shell zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,6 +120,7 @@ fd --type f --hidden --follow --exclude .git . "$1"
 _fzf_compgen_dir() {
 fd --type d . "$1"
 }
+
 if [ -e /home/david/.nix-profile/etc/profile.d/nix.sh ]; then . /home/david/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 eval "$(starship init zsh)"
