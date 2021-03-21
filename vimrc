@@ -201,7 +201,7 @@ let g:ale_lint_delay = 1000
 let g:ale_linters = {
 \   'python': ['flake8'],
 \   'tex': ['vale'],
-\   'markdown': ['markdownlint', 'vale'],
+\   'markdown': ['markdownlint'],
 \}
 
 " fixer configurations
@@ -224,9 +224,13 @@ let g:vimtex_compiler_tectonic = {
 
 " Disable Jedi because it is called through deoplete
 let g:jedi#completions_enabled = 0
-let g:deoplete#enable_at_startup = 1
+
 " Don't show the extra docstring stuff
 autocmd FileType python setlocal completeopt-=preview
+
+" Disable deoplete for markdown
+autocmd FileType markdown 
+            \ call deoplete#custom#buffer_option('auto_complete', v:false)
 
 " file browser
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
