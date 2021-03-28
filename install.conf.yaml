@@ -8,69 +8,61 @@
     ~/.pam_environment: pam_environment
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
-    ~/.config/starship.toml: starship.toml
     ~/.vale.ini: vale/vale.ini
     ~/.tmux.conf: tmux.conf
 
     ~/.config/alacritty:
-        if: '[ `hostname` != rpi4 ]'
+        if: '[ `hostname` != little-totoro ]'
         create: true
         path: alacritty
-    ~/.config/borgmatic.d:
+    ~/.config/borgmatic:
+        if: '[ `hostname` = little-totoro ]'
         create: true
-        path: borgmatic.d
+        path: borgmatic
     ~/.config/fontconfig:
-        if: '[ `hostname` != rpi4 ]'
+        if: '[ `hostname` != little-totoro ]'
         create: true
         path: fontconfig
     ~/.config/gtk-3.0:
-        if: '[ `hostname` != rpi4 ]'
+        if: '[ `hostname` != little-totoro ]'
         create: true
         path: gtk-3.0
     ~/.config/khal/config:
-        if: '[ `hostname` != rpi4 ]'
+        if: '[ `hostname` != little-totoro ]'
         create: true
         path: khal/config
     ~/.config/mako:
-        if: '[ `hostname` != rpi4 ]'
+        if: '[ `hostname` != little-totoro ]'
         create: true
         path: mako
     ~/.config/rofi:
-        if: '[ `hostname` != rpi4 ]'
+        if: '[ `hostname` != little-totoro ]'
         create: true
         path: rofi
     ~/.config/sway:
-        if: '[ `hostname` != rpi4 ]'
+        if: '[ `hostname` != little-totoro ]'
         create: true
         path: sway
     ~/.config/swaylock:
-        if: '[ `hostname` != rpi4 ]'
+        if: '[ `hostname` != little-totoro ]'
         create: true
         path: swaylock
     ~/.config/waybar:
-        if: '[ `hostname` != rpi4 ]'
+        if: '[ `hostname` != little-totoro ]'
         create: true
         path: waybar
     ~/.config/wofi:
-        if: '[ `hostname` != rpi4 ]'
+        if: '[ `hostname` != little-totoro ]'
         create: true
         path: wofi
     ~/.config/onedrive/config:
-        if: '[ `hostname` != rpi4 ]'
+        if: '[ `hostname` != little-totoro ]'
         create: true
         path: onedrive/config
     ~/.config/vale:
-        if: '[ `hostname` != rpi4 ]'
+        if: '[ `hostname` != little-totoro ]'
         create: true
         path: vale
     ~/.ssh/authorized_keys:
-        if: '[ `hostname` = rpi4 ]'
         create: true
         path: ssh/authorized_keys
-
-    /etc/systemd/system/borgmatic.service:
-        if: '[ `hostname` = rpi4 ]'
-        path: borgmatic.d/borgmatic.service
-    /etc/systemd/system/borgmatic.timer:
-        if: '[ `hostname` = rpi4 ]'
-        path: borgmatic.d/borgmatic.timer
