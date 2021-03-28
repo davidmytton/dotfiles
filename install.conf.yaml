@@ -15,10 +15,6 @@
         if: '[ `hostname` != big-totoro" ]'
         create: true
         path: alacritty
-    ~/.config/borgmatic:
-        if: '[ `hostname` = big-totoro ]'
-        create: true
-        path: borgmatic
     ~/.config/fontconfig:
         if: '[ `hostname` != big-totoro ]'
         create: true
