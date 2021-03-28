@@ -22,12 +22,6 @@ repo](https://github.com/snakedye/sway_config).
 5. `mkdir ~/.themes/` then clone
    [Nordic](https://github.com/EliverLara/Nordic).
 
-## Shell customisation
-
-* [Starship](https://starship.rs/)
-* [zsh auto-suggestions](https://github.com/zsh-users/zsh-autosuggestions)
-* [zsh-nix-shell](https://github.com/chisui/zsh-nix-shell)
-
 ## Text
 
 [tectonic](https://tectonic-typesetting.github.io/en-US/index.html) is the
@@ -62,35 +56,3 @@ and
   ([Package](https://aur.archlinux.org/packages/waybar-git/))
 * Notifications: [mako](https://wayland.emersion.fr/mako/)
   ([Package](https://www.archlinux.org/packages/community/x86_64/mako/))
-
-## Backups
-
-Run on `rpi4` using the following packages:
-
-* [borg](https://www.borgbackup.org/)
-  ([Package](https://www.archlinux.org/packages/community/x86_64/borg/))
-* [borgmatic](https://torsion.org/borgmatic/)
-  ([Package](https://www.archlinux.org/packages/community/any/borgmatic/))
-
-After dotbot installs the configs for systemd:
-
-1. `systemctl edit borgmatic.service` and set
-
-```
-[Service]
-Environment="BORG_PASSPHRASE=HERE"
-```
-
-2. `systemctl daemon-reload`
-3. `systemctl start borgmatic.timer`
-
-## .git/config
-
-```
-[filter "remove-healthchecks-url"]
-    clean = "sed -e 's/^    healthchecks:.*/#    healthchecks: TODO/'"
-
-[submodule "dotbot"]
-    url = git@github.com:anishathalye/dotbot.git
-    active = true
-```

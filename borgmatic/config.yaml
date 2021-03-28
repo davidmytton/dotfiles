@@ -492,7 +492,7 @@ hooks:
     # begins, ends, or errors. Create an account at
     # https://healthchecks.io if you'd like to use this service.
     # See borgmatic monitoring documentation for details.
-    healthchecks: https://hc-ping.com/f92fbb00-fe2d-408d-ae97-3e52d86bc0e7
+    healthchecks: URL 
 
     # Cronitor ping URL to notify when a backup begins, ends, or
     # errors. Create an account at https://cronitor.io if you'd
