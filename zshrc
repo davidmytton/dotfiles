@@ -72,7 +72,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf nix-shell zsh-autosuggestions)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,23 +104,4 @@ fi
 alias vim="nvim"
 
 # Set up keychain for SSH key
-#eval $(keychain --eval --quiet id_rsa)
-
-# fzf
-# https://spin.atomicobject.com/2020/02/13/command-line-fuzzy-find-with-fzf/
-# fzf ctrl-r and alt-c behavior
-export FZF_BASE="/usr/local/bin/fzf"
-export FZF_CTRL_T_COMMAND="fd --follow --exclude \".git\" . $HOME"
-export FZF_ALT_C_COMMAND="fd -t d --follow --exclude \".git\" . $HOME"
-
-# fzf single quote tab completion behavior
-_fzf_compgen_path() {
-fd --type f --hidden --follow --exclude .git . "$1"
-}
-_fzf_compgen_dir() {
-fd --type d . "$1"
-}
-
-if [ -e /home/david/.nix-profile/etc/profile.d/nix.sh ]; then . /home/david/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-eval "$(starship init zsh)"
+eval "$(ssh-agent -s)"

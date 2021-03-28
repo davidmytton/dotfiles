@@ -12,55 +12,55 @@
     ~/.tmux.conf: tmux.conf
 
     ~/.config/alacritty:
-        if: '[ `hostname` != little-totoro ]'
+        if: '[ `hostname` != big-totoro" ]'
         create: true
         path: alacritty
     ~/.config/borgmatic:
-        if: '[ `hostname` = little-totoro ]'
+        if: '[ `hostname` = big-totoro ]'
         create: true
         path: borgmatic
     ~/.config/fontconfig:
-        if: '[ `hostname` != little-totoro ]'
+        if: '[ `hostname` != big-totoro ]'
         create: true
         path: fontconfig
     ~/.config/gtk-3.0:
-        if: '[ `hostname` != little-totoro ]'
+        if: '[ `hostname` != big-totoro ]'
         create: true
         path: gtk-3.0
     ~/.config/khal/config:
-        if: '[ `hostname` != little-totoro ]'
+        if: '[ `hostname` != big-totoro ]'
         create: true
         path: khal/config
     ~/.config/mako:
-        if: '[ `hostname` != little-totoro ]'
+        if: '[ `hostname` != big-totoro ]'
         create: true
         path: mako
     ~/.config/rofi:
-        if: '[ `hostname` != little-totoro ]'
+        if: '[ `hostname` != big-totoro ]'
         create: true
         path: rofi
     ~/.config/sway:
-        if: '[ `hostname` != little-totoro ]'
+        if: '[ `hostname` != big-totoro ]'
         create: true
         path: sway
     ~/.config/swaylock:
-        if: '[ `hostname` != little-totoro ]'
+        if: '[ `hostname` != big-totoro ]'
         create: true
         path: swaylock
     ~/.config/waybar:
-        if: '[ `hostname` != little-totoro ]'
+        if: '[ `hostname` != big-totoro ]'
         create: true
         path: waybar
     ~/.config/wofi:
-        if: '[ `hostname` != little-totoro ]'
+        if: '[ `hostname` != big-totoro ]'
         create: true
         path: wofi
     ~/.config/onedrive/config:
-        if: '[ `hostname` != little-totoro ]'
+        if: '[ `hostname` != big-totoro ]'
         create: true
         path: onedrive/config
     ~/.config/vale:
-        if: '[ `hostname` != little-totoro ]'
+        if: '[ `hostname` != big-totoro ]'
         create: true
         path: vale
     ~/.ssh/authorized_keys:
