@@ -116,8 +116,8 @@ set noshowmode
 let g:lightline = { 'colorscheme': 'nord' }
 
 " code folding
-set foldmethod=indent
-set foldlevel=99
+"set foldmethod=indent
+"set foldlevel=99
 
 " wrap toggle
 setlocal nowrap
@@ -206,7 +206,7 @@ let g:ale_linters = {
 
 " fixer configurations
 let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['remove_trailing_lines', 'trim_whitespace'],
 \}
 
 " vimlatex config
@@ -229,7 +229,7 @@ let g:jedi#completions_enabled = 0
 autocmd FileType python setlocal completeopt-=preview
 
 " Disable deoplete for markdown
-autocmd FileType markdown 
+autocmd FileType markdown
             \ call deoplete#custom#buffer_option('auto_complete', v:false)
 
 " file browser

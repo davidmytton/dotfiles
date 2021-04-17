@@ -59,6 +59,7 @@
         if: '[ `hostname` != big-totoro ]'
         create: true
         path: vale
-    ~/.ssh/authorized_keys:
+    ~/.vim/indent/html.vim:
         create: true
-        path: ssh/authorized_keys
+        path: vimhtml 
+
