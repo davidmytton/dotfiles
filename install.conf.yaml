@@ -5,43 +5,45 @@
 - clean: ['~']
 
 - link:
-    ~/.fonts.conf: fonts.conf
-    ~/.pam_environment: pam_environment
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.vale.ini: vale/vale.ini
     ~/.tmux.conf: tmux.conf
 
     ~/.config/alacritty:
-        if: '[ `hostname` != big-totoro ]'
+        if: '[ `hostname` == dm-labtop-mk4 ]'
         create: true
         path: alacritty
     ~/.config/khal/config:
-        if: '[ `hostname` != big-totoro ]'
+        if: '[ `hostname` == dm-labtop-mk4 ]'
         create: true
         path: khal/config
+    ~/.fonts.conf:
+        if: '[ `hostname` == dm-labtop-mk4 ]'
+        create: true
+        path: fonts.conf
     ~/.config/mako:
-        if: '[ `hostname` != big-totoro ]'
+        if: '[ `hostname` == dm-labtop-mk4 ]'
         create: true
         path: mako
     ~/.config/rofi:
-        if: '[ `hostname` != big-totoro ]'
+        if: '[ `hostname` == dm-labtop-mk4 ]'
         create: true
         path: rofi
     ~/.config/sway:
-        if: '[ `hostname` != big-totoro ]'
+        if: '[ `hostname` == dm-labtop-mk4 ]'
         create: true
         path: sway
     ~/.config/swaylock:
-        if: '[ `hostname` != big-totoro ]'
+        if: '[ `hostname` == dm-labtop-mk4 ]'
         create: true
         path: swaylock
     ~/.config/waybar:
-        if: '[ `hostname` != big-totoro ]'
+        if: '[ `hostname` == dm-labtop-mk4 ]'
         create: true
         path: waybar
     ~/.config/wofi:
-        if: '[ `hostname` != big-totoro ]'
+        if: '[ `hostname` == dm-labtop-mk4 ]'
         create: true
         path: wofi
     ~/.config/vale:
@@ -51,4 +53,3 @@
     ~/.vim/indent/html.vim:
         create: true
         path: vimhtml 
-
