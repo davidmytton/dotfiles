@@ -105,3 +105,23 @@ alias vim="nvim"
 
 # Set up keychain for SSH key
 eval "$(ssh-agent -s)"
+
+# Set theme for GTK
+export GTK_THEME="Nordic"
+
+# Launch sway if tty1
+if [ "$(tty)" = "/dev/tty1" ]; then
+    # Make Firefox use Wayland
+    export MOZ_ENABLE_WAYLAND=1
+
+    # Configure xdg-desktop-portal-wlr for screensharing
+    export XDG_CURRENT_DESKTOP=sway
+
+    # Start sway
+	mkdir -p /tmp/swaytmp
+	export XDG_RUNTIME_DIR=/tmp/swaytmp
+	exec dbus-launch --exit-with-session sway
+
+    # Audio
+    exec pipewire
+fi

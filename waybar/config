@@ -8,7 +8,7 @@
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window"],
     // "idle_inhibitor",
-    "modules-right": [ "custom/khal", "pulseaudio", "cpu", "battery", "network", "custom/weather", "custom/pacman", "tray", "clock", "idle_inhibitor"],
+    "modules-right": [ "custom/khal", "pulseaudio", "cpu", "battery", "network", "custom/weather", "tray", "clock", "idle_inhibitor"],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -30,8 +30,8 @@
 	"idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": "🍵",
+            "deactivated": "🌿"
         }
     },
     "mpd": {
@@ -75,7 +75,8 @@
         "timezone": "Europe/London",
         "format": "{:%a %d %b %H:%M:%S}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>",
-        "interval": 1
+        "interval": 1,
+        "locale": "C"
     },
     "cpu": {
         "format": "🤖 {usage}%",
@@ -113,7 +114,7 @@
         "format-source": "{volume}% 🎙️",
         "format-source-muted": "🔇",
         "format-icons": {
-            "headphone": "",
+            "headphone": "🎧",
             "hands-free": "",
             "headset": "🎧",
             "phone": "",
@@ -121,7 +122,7 @@
             "car": "",
             "default": ["🔈", "🔉", "🔊"]
         },
-        "on-click": "pavucontrol"
+        "on-click": "alsamixer"
     },
     //"custom/weather": {
     //    "exec": "curl 'https://wttr.in/?format=%C+%f'",
@@ -131,7 +132,7 @@
         "format": "{}",
         "tooltip": true,
         "interval": 3600,
-        "exec": "python ~/.config/waybar/waybar-wttr.py",
+        "exec": "python3 ~/.config/waybar/waybar-wttr.py",
         "return-type": "json"
     },
     "custom/khal": {
@@ -141,13 +142,4 @@
         "exec": "python ~/.config/waybar/waybar-khal.py",
         "return-type": "json",
     },
-    "custom/pacman": {
-        "format": "🌲 {}",
-        "interval": 172800,                     // every hour
-        "exec": "checkupdates | wc -l",       // # of updates
-        "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "signal": 8,
-        "tooltip": false,
-        "on-click": "exec alacritty --hold -e yay"
-    }
 }

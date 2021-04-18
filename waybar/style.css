@@ -3,11 +3,7 @@
     border: none;
     border-radius: 0;
     padding: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
-    /* font-family: San Francisco Text, MesloLGS NF, Arial, sans-serif; */
-  /* font-family: JetBrains Mono, Ubuntu Mono; */
-   font-size: 13px;
-   /* font-family: Ubuntu ,Arial, Helvetica, sans-serif; */
+    font-size: 14px;
     font-weight: 500;
     font-family: monospace;
 }

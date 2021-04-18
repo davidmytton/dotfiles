@@ -1,5 +1,0 @@
-[hostname]
-ssh_only = false
-
-[time]
-disabled = false

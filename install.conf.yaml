@@ -5,6 +5,7 @@
 - clean: ['~']
 
 - link:
+    ~/.fonts.conf: fonts.conf
     ~/.pam_environment: pam_environment
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
@@ -12,17 +13,9 @@
     ~/.tmux.conf: tmux.conf
 
     ~/.config/alacritty:
-        if: '[ `hostname` != big-totoro" ]'
+        if: '[ `hostname` != big-totoro ]'
         create: true
         path: alacritty
-    ~/.config/fontconfig:
-        if: '[ `hostname` != big-totoro ]'
-        create: true
-        path: fontconfig
-    ~/.config/gtk-3.0:
-        if: '[ `hostname` != big-totoro ]'
-        create: true
-        path: gtk-3.0
     ~/.config/khal/config:
         if: '[ `hostname` != big-totoro ]'
         create: true
@@ -51,10 +44,6 @@
         if: '[ `hostname` != big-totoro ]'
         create: true
         path: wofi
-    ~/.config/onedrive/config:
-        if: '[ `hostname` != big-totoro ]'
-        create: true
-        path: onedrive/config
     ~/.config/vale:
         if: '[ `hostname` != big-totoro ]'
         create: true

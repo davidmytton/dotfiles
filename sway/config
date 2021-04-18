@@ -4,25 +4,18 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-# Autostart
-
-exec autotiling
+# Basic apps
 exec mako
+exec pipewire
 
 # Windows Rules
 
-for_window [title="Authentication"] floating enable
-for_window [title="Authorization is required"] floating enable
-for_window [title="Copying"] floating enable
-for_window [title="File Already Exist"] floating enable
-for_window [app_id="dolphin"] opacity 0.97
+for_window [title="Firefox — Sharing Indicator"] floating enable
+for_window [title="alacritty"] opacity 0.90
 for_window [title="Signal"] floating enable
 for_window [class="vlc"] inhibit_idle fullscreen
-for_window [title="Progress"] floating enable
-for_window [title="Quick Format Citation"] floating enable
 
-exec_always ~/dotfiles/import-gsettings
-seat seat0 xcursor_theme Adwaita
+#exec_always ~/dotfiles/import-gsettings
 
 # Startup
 workspace 1
@@ -43,9 +36,6 @@ set $menu wofi
 
 # Disable titlebar
 default_border pixel 3
-
-# Font
-#font pango:ProductSansMedium 13px
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
@@ -111,9 +101,6 @@ bindsym Shift+Alt+4 exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'sc
 
     # Start your launcher
     bindsym $mod+Space exec $menu
-
-	# Launch Dolphin
-	# bindsym $mod+d exec dolphin
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -261,14 +248,6 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #
-# Screensharing
-#
-# Assuming xdg-desktop-portal and xdg-desktop-portal-wlr are installed, they
-# need to be launched with the correct XDG_CURRENT_DESKTOP env variable set.
-# This line does that. As per https://github.com/emersion/xdg-desktop-portal-wlr/wiki/systemd-user-services,-pam,-and-environment-variables
-exec "systemctl --user import-environment"
-
-#
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
@@ -279,7 +258,7 @@ bar {
 include /etc/sway/config.d/*
 
 # Wallpapers
-set $wallpapers_path $HOME/OneDrive/Wallpapers
+set $wallpapers_path $HOME/Sync/Wallpapers
 output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 
 input * xkb_layout gb
