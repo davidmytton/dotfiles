@@ -35,6 +35,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 let g:deoplete#enable_at_startup = 1
 call plug#end()
 
@@ -231,6 +232,9 @@ autocmd FileType python setlocal completeopt-=preview
 " Disable deoplete for markdown
 autocmd FileType markdown
             \ call deoplete#custom#buffer_option('auto_complete', v:false)
+
+" Deoplete autocompletetion for Golang
+"call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " file browser
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']

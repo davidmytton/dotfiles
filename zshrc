@@ -125,3 +125,6 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     # Audio
     exec pipewire
 fi
+
+path+=('/home/david/node_modules/nb.sh')
+export PATH
