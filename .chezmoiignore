@@ -2,6 +2,8 @@ LICENSE
 README.md
 install.sh
 
+# Only install these on Linux
 {{ if ne .chezmoi.os "linux" }}
-.config/sway/config
+.config/sway
+.config/waybar
 {{ end }}
