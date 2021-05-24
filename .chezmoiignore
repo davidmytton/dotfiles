@@ -1,3 +1,7 @@
 LICENSE
 README.md
 install.sh
+
+{{ if ne .chezmoi.os "linux" }}
+.config/sway/config
+{{ end }}
