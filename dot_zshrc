@@ -1,10 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Paths
 if [[ `uname` == "Darwin" ]]; then
     export ZSH="/Users/david/.oh-my-zsh"
-    path+=('/Users/david/bin')
 else
     export ZSH="/home/david/.oh-my-zsh"
 fi
@@ -128,6 +127,3 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     # Audio
     exec pipewire
 fi
-
-path+=('/Users/david/bin')
-export PATH
