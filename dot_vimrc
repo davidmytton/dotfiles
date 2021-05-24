@@ -256,3 +256,6 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeGlyphReadOnly = "RO"
+
+" run chezmoi apply whenever you save a dotfile #
+autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path %
