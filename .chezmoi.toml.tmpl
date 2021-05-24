@@ -2,10 +2,10 @@
 sourceDir = "{{ .chezmoi.sourceDir }}"
 
 [data]
-  name = "Your name"
+  name = "David Mytton"
   codespaces = {{ $codespaces }}
 {{- if $codespaces }}{{/* Codespaces dotfiles setup is non-interactive, so set an email address */}}
-  email = "your@email.com"
+  email = "david@davidmytton.co.uk"
 {{- else }}{{/* Interactive setup, so prompt for an email address */}}
   email = "{{ promptString "email" }}"
 {{- end }}

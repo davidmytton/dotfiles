@@ -18,5 +18,4 @@ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply davidmytton
 pip3 install --user pynvim
 ```
 
-4. [Set up nvim init](https://neovim.io/doc/user/nvim.html#nvim-from-vim).
-5. Launch nvim.
+4. Launch nvim.
