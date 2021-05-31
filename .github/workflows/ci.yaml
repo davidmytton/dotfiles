@@ -13,6 +13,12 @@ jobs:
         CODESPACES: true
     steps:
       - uses: actions/checkout@v2
+
+      - name: Setup Python ${{ env.PYTHON_VERSION }} Environment
+        uses: actions/setup-python@v2.2.2
+        with:
+            python-version: '3.9'
+
       - run: ./install.sh
       - name: chezmoi data
         run: '"$HOME/.local/bin/chezmoi" data'
