@@ -6,8 +6,10 @@ and based on the [template repo](https://github.com/chezmoi/dotfiles).
 ## Setup
 
 1. [Install ohmyzsh](https://ohmyz.sh/#install)
-2. Bootstrap chezmoi
+2. [Create a new SSH key](https://docs.github.com/articles/generating-an-ssh-key/) 
+   and [add it to GitHub](https://github.com/settings/keys).
+4. Bootstrap chezmoi
 
-```zsh
-sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply davidmytton
+```bash
+sh -c "$(curl -fsLS git.io/chezmoi)" -- init --ssh --apply davidmytton
 ```
