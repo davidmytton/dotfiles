@@ -5,7 +5,7 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 if [[ `uname` == "Darwin" ]]; then
     export ZSH="/Users/david/.oh-my-zsh"
 else
-    export ZSH="/home/david/.oh-my-zsh"
+    export ZSH="$HOME/.oh-my-zsh"
 fi
 
 export PATH
