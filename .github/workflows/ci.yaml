@@ -4,6 +4,9 @@ on:
   push:
   pull_request:
 
+env:
+  PYTHON_VERSION: '3.9'
+
 jobs:
   clone-and-install:
     runs-on: ubuntu-latest
@@ -17,7 +20,7 @@ jobs:
       - name: Setup Python ${{ env.PYTHON_VERSION }} Environment
         uses: actions/setup-python@v2.2.2
         with:
-            python-version: '3.9'
+            python-version: ${{ env.PYTHON_VERSION }} 
 
       - run: ./install.sh
       - name: chezmoi data
