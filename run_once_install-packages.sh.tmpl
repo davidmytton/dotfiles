@@ -1,11 +1,11 @@
 {{ if eq .chezmoi.os "linux" -}}
-{{     if (eq .chezmoi.osRelease.name "Alpine Linux") }}
+{{     if (eq .chezmoi.osRelease.name "Alpine Linux") -}}
 #!/bin/sh
 sudo apk add py3-pynvim
-{{     else }}
+{{     else -}}
 #!/bin/sh
 python3 -m pip install --user pynvim
-{{     end }}
+{{     end -}}
 {{ else if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
 python3 -m pip install --user pynvim
