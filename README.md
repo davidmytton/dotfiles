@@ -11,11 +11,3 @@ and based on the [template repo](https://github.com/chezmoi/dotfiles).
 ```zsh
 sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply davidmytton
 ```
-
-3. Set up pynvim:
-
-```zsh
-pip3 install --user pynvim
-```
-
-4. Launch nvim.
