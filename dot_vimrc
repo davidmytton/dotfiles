@@ -4,39 +4,44 @@ let need_to_install_plugins = 0
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    "autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
     let need_to_install_plugins = 1
 endif
 
 call plug#begin()
-Plug 'preservim/nerdtree'
+" Sensuble defaults
 Plug 'tpope/vim-sensible'
+
+" File browser with git indicators
+Plug 'preservim/nerdtree'
+Plug 'vim-scripts/The-NERD-tree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Tabs
+Plug 'jistr/vim-nerdtree-tabs'
+
+" git indicator in editor
+Plug 'airblade/vim-gitgutter'
+
+" Status bar
 Plug 'itchyny/lightline.vim'
+
+" Nord theme
 Plug 'arcticicestudio/nord-vim'
+
+" Tabs
 Plug 'ap/vim-buftabline'
+
+" Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'vim-scripts/The-NERD-tree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'majutsushi/tagbar'
-Plug 'vim-scripts/indentpython.vim'
-Plug 'lepture/vim-jinja'
-Plug 'pangloss/vim-javascript'
-Plug 'dense-analysis/ale'
-Plug 'lervag/vimtex'
-Plug 'davidhalter/jedi-vim'
-Plug 'deoplete-plugins/deoplete-jedi'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-let g:deoplete#enable_at_startup = 1
+
+" neovim language things
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'neovim/nvim-lspconfig'
+
+" Nicer LSP UI
+Plug 'glepnir/lspsaga.nvim'
 call plug#end()
 
 filetype plugin indent on
@@ -188,54 +193,6 @@ endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-" Ale syntax config
-let g:ale_fix_on_save = 1
-
-" lint after 1000ms after changes are made both on insert mode and normal mode
-let g:ale_lint_on_text_changed = 'always'
-let g:ale_lint_delay = 1000
-
-" use nice symbols for errors and warnings
-"let g:ale_sign_error = '✗\ '
-"let g:ale_sign_warning = '⚠\ '
-
-let g:ale_linters = {
-\   'python': ['flake8'],
-\   'tex': ['vale'],
-\   'markdown': ['markdownlint'],
-\}
-
-" fixer configurations
-let g:ale_fixers = {
-\   'python': ['remove_trailing_lines', 'trim_whitespace'],
-\}
-
-" vimlatex config
-let g:tex_flavor = 'latex'
-let g:vimtex_compiler_method = "tectonic"
-
-let g:vimtex_compiler_tectonic = {
-\ 'build_dir' : 'build',
-\ 'options' : [
-\   '--keep-logs',
-\   '--keep-intermediates',
-\   '--synctex'
-\ ],
-\}
-
-" Disable Jedi because it is called through deoplete
-let g:jedi#completions_enabled = 0
-
-" Don't show the extra docstring stuff
-autocmd FileType python setlocal completeopt-=preview
-
-" Disable deoplete for markdown
-autocmd FileType markdown
-            \ call deoplete#custom#buffer_option('auto_complete', v:false)
-
-" Deoplete autocompletetion for Golang
-"call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
-
 " file browser
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let NERDTreeMinimalUI = 1
@@ -259,3 +216,64 @@ let g:NERDTreeGlyphReadOnly = "RO"
 
 " run chezmoi apply whenever you save a dotfile #
 autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path %
+
+" Set up language servers
+lua << EOF
+require'lspconfig'.pyright.setup{}
+EOF
+
+" Nicer LSP UI
+lua << EOF
+local saga = require 'lspsaga'
+EOF
+
+" Configure language server
+" https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
+lua << EOF
+local nvim_lsp = require('lspconfig')
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  --Enable completion triggered by <c-x><c-o>
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+end
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = { "pyright" }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
+EOF

@@ -13,3 +13,9 @@ and based on the [template repo](https://github.com/chezmoi/dotfiles).
 ```bash
 sh -c "$(curl -fsLS git.io/chezmoi)" -- init --ssh --apply davidmytton
 ```
+
+5. For neovim, NodeJS is required, then the various language servers:
+
+```bash
+sudo npm install -g pyright
+```
