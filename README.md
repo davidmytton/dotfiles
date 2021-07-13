@@ -10,8 +10,13 @@ and based on the [template repo](https://github.com/chezmoi/dotfiles).
    and [add it to GitHub](https://github.com/settings/keys).
 4. Bootstrap chezmoi
 
-```bash
+### macOS
+```
 sh -c "$(curl -fsLS git.io/chezmoi)" -- init --ssh --apply davidmytton
+```
+### nixOS
+```
+chezmoi -v init davidmytton --ssh --apply
 ```
 
 5. For neovim, NodeJS is required, then the various language servers:
