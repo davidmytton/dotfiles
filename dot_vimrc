@@ -217,6 +217,10 @@ let g:NERDTreeGlyphReadOnly = "RO"
 " run chezmoi apply whenever you save a dotfile #
 autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path %
 
+" Hightlight on yank
+" From https://neovim.io/news/2021/07
+au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
+
 " Set up language servers
 lua << EOF
 require'lspconfig'.pyright.setup{}
