@@ -32,9 +32,10 @@ Plug 'arcticicestudio/nord-vim'
 " Tabs
 Plug 'ap/vim-buftabline'
 
-" Fuzzy finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Telescope file finder / picker
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " neovim language things
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -55,8 +56,8 @@ if need_to_install_plugins == 1
 endif
 
 " gfiles shortcut
-nnoremap <C-f> :Files<Cr>
-nnoremap <C-g> :GFiles<Cr>
+nnoremap <C-f> <cmd>Telescope find_files<cr>
+nnoremap <C-g> <cmd>Telescope git_files<cr>
 
 " always show the status bar
 set laststatus=2
