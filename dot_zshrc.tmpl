@@ -1,8 +1,3 @@
-{{ if (eq .chezmoi.os "linux") }}
-{{ if (eq .chezmoi.osRelease.name "NixOS") -}}
-# This is managed by NixOS on Linux
-{{ end -}}
-{{ else -}}
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -132,4 +127,3 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     # Audio
     exec pipewire
 fi
-{{ end -}}
