@@ -1,5 +1,8 @@
+{{ if (eq .chezmoi.os "linux") }}
+{{ if (eq .chezmoi.osRelease.name "NixOS") -}}
 # This is managed by NixOS on Linux
-{{ if eq .chezmoi.os "darwin" -}}
+{{ end -}}
+{{ else -}}
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
