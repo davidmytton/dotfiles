@@ -1,0 +1,31 @@
+theme = "nord-dark"
+icons = "awesome5"
+
+[[block]]
+block = "custom"
+command = ''' curl "https://wttr.in/?format=%t+%C" '''
+interval = 300
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "networkmanager"
+on_click = "alacritty -e nmtui"
+device_format = "{icon} {ap}"
+interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+interface_name_include = []
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage} {time}"
+
+[[block]]
+block = "time"
+interval = 1
+format = "%a %d %b %T"
