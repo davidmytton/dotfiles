@@ -1,5 +1,3 @@
-# This is managed by NixOS on Linux
-{{ if eq .chezmoi.os "darwin" -}}
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -129,4 +127,3 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     # Audio
     exec pipewire
 fi
-{{ end -}}
