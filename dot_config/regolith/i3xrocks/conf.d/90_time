@@ -1,0 +1,3 @@
+# Date Time
+[time]
+interval=xresource:i3xrocks.time.interval 10

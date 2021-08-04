@@ -1,0 +1,5 @@
+# volume
+#
+# Display Volume
+[volume]
+interval=1

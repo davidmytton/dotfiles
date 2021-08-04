@@ -1,0 +1,4 @@
+i3-wm.bar.position:	top
+i3xrocks.date.format2: %Y-%m-%d %H:%M:%S
+i3xrocks.time.interval: 1
+gnome.gtk.theme: Nordic
