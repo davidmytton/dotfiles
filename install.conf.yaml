@@ -38,6 +38,7 @@
 
 - ifmacos:
     - brew:
+        - antigen
         - bat
         - exa
         - neovim
