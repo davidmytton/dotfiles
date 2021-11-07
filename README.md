@@ -1,26 +1,35 @@
-# dotfiles
+# David Mytton's dotfiles
 
-My personal dotfiles for Linux and macOS for use with [`chezmoi`](https://www.chezmoi.io)
-and based on the [template repo](https://github.com/chezmoi/dotfiles).
+My personal dotfiles for macOS and Linux, set up with
+[dotbot](https://github.com/anishathalye/dotbot) and inspiration from [Josiah
+Nunemaker's blog
+post](https://josnun.github.io/posts/managing-dotfiles-and-zsh-with-dotbot-and-antigen/).
 
 ## Setup
 
-1. [Install ohmyzsh](https://ohmyz.sh/#install)
-2. [Create a new SSH key](https://docs.github.com/articles/generating-an-ssh-key/) 
-   and [add it to GitHub](https://github.com/settings/keys).
-4. Bootstrap chezmoi
+On a new device (all relevant packages should be installed automatically):
 
-### macOS
-```
-sh -c "$(curl -fsLS git.io/chezmoi)" -- init --ssh --apply davidmytton
-```
-### nixOS
-```
-chezmoi -v init davidmytton --ssh --apply
+```shell
+git clone git@github.com:davidmytton/dotfiles.git
+./install
 ```
 
-5. For neovim, NodeJS is required, then the various language servers:
+## Why dotbot?
 
-```bash
-sudo npm install -g pyright
+I originally used a very simple dotbot config, then moved to
+[chezmoi](https://www.chezmoi.io) for the more advanced features. However, that
+requires installing the chezmoi binary and adopting the workflow. dotbot is
+embedded into the repo and uses a standard `./install` script.
+
+## Initial dotbot setup
+
+A record of the initial dotbot setup, [copied from the
+readme](https://github.com/anishathalye/dotbot/blob/ac5793ceb58863d23427d21597634d3dcf66f9ac/README.md#integrate-with-existing-dotfiles):
+
+```shell
+cd dotfiles
+git submodule add https://github.com/anishathalye/dotbot
+git config -f .gitmodules submodule.dotbot.ignore dirty # ignore dirty commits in the submodule
+cp dotbot/tools/git-submodule/install .
+touch install.conf.yaml
 ```

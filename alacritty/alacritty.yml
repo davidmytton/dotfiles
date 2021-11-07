@@ -5,6 +5,12 @@ window:
   dynamic_padding: true
   opacity: 0.95
 
+font:
+  size: 12.0
+  normal:
+    family: Hack Nerd Font Mono
+    style: Regular
+
 # Nord theme
 # https://github.com/arcticicestudio/nord-alacritty
 colors:
@@ -72,7 +78,7 @@ cursor:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
   #- { key: Paste,                                action: Paste          }
   #- { key: Copy,                                 action: Copy           }
   #- { key: L,         mods: Control,             action: ClearLogNotice }
@@ -83,8 +89,8 @@ cursor:
   #- { key: End,       mods: Shift,   mode: ~Alt, action: ScrollToBottom }
 
   # Vi Mode
-  #- { key: Space,  mods: Shift|Control, mode: Vi, action: ScrollToBottom          }
-  #- { key: Space,  mods: Shift|Control,           action: ToggleViMode            }
+  #- { key: Space,  mods: Shift, mode: Vi, action: ScrollToBottom          }
+  - { key: Space,  mods: Shift,           action: ToggleViMode            }
   #- { key: Escape,                      mode: Vi, action: ClearSelection          }
   #- { key: I,                           mode: Vi, action: ScrollToBottom          }
   #- { key: I,                           mode: Vi, action: ToggleViMode            }

@@ -1,0 +1,36 @@
+# Dotbot config
+# https://github.com/anishathalye/dotbot
+# Inspired by https://josnun.github.io/posts/managing-dotfiles-and-zsh-with-dotbot-and-antigen/
+
+# install.conf.yaml
+- defaults:
+    link:
+      relink: true
+      create: true
+
+
+- clean: ['~']
+
+- create:
+  - ~/.vim
+
+- link:
+    # Shell
+    ~/.aliases: shell/.aliases
+    ~/.zshrc: shell/.zshrc
+
+    # Alacritty
+    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+    
+    # Git
+    ~/.gitconfig: git/.gitconfig
+  
+    # Vim
+    ~/.vimrc: vim/.vimrc
+    ~/.config/nvim/init.vim: vim/nvim/init.vim
+    ~/.vim/indent/html.vim: vim/indent/html.vim
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [chsh -s $(which zsh), Making zsh the default shell]
+

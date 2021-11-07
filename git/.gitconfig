@@ -1,0 +1,7 @@
+# This is Git's per-user configuration file.
+[user]
+	name = David Mytton
+	email = david@davidmytton.co.uk
+
+[init]
+	defaultBranch = main
