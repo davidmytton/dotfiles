@@ -7,9 +7,21 @@ post](https://josnun.github.io/posts/managing-dotfiles-and-zsh-with-dotbot-and-a
 
 ## Setup
 
-On a new device (all relevant packages should be installed automatically):
+For macOS and most Linux, dotbot is set up to install the right packages. On
+Alpine, they must be installed manually.
+
+### macOS and Linux
 
 ```shell
+git clone git@github.com:davidmytton/dotfiles.git
+cd dotfiles
+./install
+```
+
+### Alpine Linux
+
+```shell
+sudo apk add git exa bat neovim
 git clone git@github.com:davidmytton/dotfiles.git
 cd dotfiles
 ./install
