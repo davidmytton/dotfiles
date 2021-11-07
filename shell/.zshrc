@@ -1,6 +1,6 @@
 ZSH_BASE=$HOME/dotfiles # Base directory for ZSH configuration
 
-source $ZSH_BASE/shell/antigen/antigen.zsh # Load Antigen
+source $ZSH_BASE/antigen/antigen.zsh # Load Antigen
 
 antigen use oh-my-zsh # Yes, I want to use Oh My ZSH
 
