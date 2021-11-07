@@ -11,6 +11,7 @@ On a new device (all relevant packages should be installed automatically):
 
 ```shell
 git clone git@github.com:davidmytton/dotfiles.git
+cd dotfiles
 ./install
 ```
 
