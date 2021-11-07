@@ -27,5 +27,8 @@ antigen theme ys
 # And lastly, apply the Antigen stuff
 antigen apply
 
+# Default editor
+export EDITOR=nvim
+
 # Needs to go after antigen
 source ~/.aliases 
