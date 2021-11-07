@@ -36,3 +36,8 @@
   - [chsh -s $(which zsh), Making zsh the default shell]
   - [git config --global core.excludesFile '~/.gitignore', Set global .gitignore]
 
+- ifmacos:
+    - brew:
+        - bat
+        - exa
+        - neovim

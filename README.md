@@ -33,3 +33,5 @@ git config -f .gitmodules submodule.dotbot.ignore dirty # ignore dirty commits i
 cp dotbot/tools/git-submodule/install .
 touch install.conf.yaml
 ```
+
+Also has a modified `./install` script to trigger installed plugins.
