@@ -42,3 +42,4 @@
         - bat
         - exa
         - neovim
+        - python@3.10
