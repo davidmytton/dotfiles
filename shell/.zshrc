@@ -36,10 +36,14 @@ export EDITOR=nvim
 # Needs to go after antigen
 source ~/.aliases 
 
+
+# Commented out until gcloud supports Python 3.10
+# https://issuetracker.google.com/issues/205238176
+if [ -d '/opt/homebrew/opt/python@3.9' ]; then PATH="/opt/homebrew/opt/python@3.9/bin:$PATH"; fi
+#if [ -d '/opt/homebrew/opt/python@3.10' ]; then PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"; fi
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/david/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/david/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/david/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/david/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-if [ -d '/opt/homebrew/opt/python@3.10' ]; then PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"; fi
