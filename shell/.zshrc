@@ -49,4 +49,4 @@ if [ -f '/Users/david/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users
 if [ -f '/Users/david/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/david/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 if [ -d '/Users/david/go/bin' ]; then path+=('/Users/david/go/bin'); fi
-
+if [ -d '/opt/metasploit-framework/bin/' ]; then path+=('/opt/metasploit-framework/bin/'); fi
