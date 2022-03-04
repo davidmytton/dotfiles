@@ -1,3 +1,4 @@
 alias vim="nvim"
 alias ls="exa -alh"
 alias cat="bat"
+alias s="cd ~/Sync/Sec"

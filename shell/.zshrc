@@ -42,11 +42,12 @@ source ~/.aliases
 if [ -d '/opt/homebrew/opt/python@3.9' ]; then PATH="/opt/homebrew/opt/python@3.9/bin:$PATH"; fi
 #if [ -d '/opt/homebrew/opt/python@3.10' ]; then PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"; fi
 
+if [ -d '/Users/david/go/bin' ]; then path+=('/Users/david/go/bin'); fi
+if [ -d '/opt/metasploit-framework/bin/' ]; then path+=('/opt/metasploit-framework/bin/'); fi
+if [ -d '/opt/homebrew/opt/mysql-client/bin' ]; then path+=('/opt/homebrew/opt/mysql-client/bin'); fi
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/david/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/david/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/david/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/david/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-if [ -d '/Users/david/go/bin' ]; then path+=('/Users/david/go/bin'); fi
-if [ -d '/opt/metasploit-framework/bin/' ]; then path+=('/opt/metasploit-framework/bin/'); fi
